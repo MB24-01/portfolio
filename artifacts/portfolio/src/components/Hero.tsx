@@ -35,7 +35,7 @@ export function Hero() {
         initial={{ opacity: 0, x: 60 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 1, delay: 0.3 }}
-        className="hidden lg:block absolute right-0 top-0 bottom-0 w-[38%] pointer-events-none select-none"
+        className="absolute right-0 top-0 bottom-0 w-[38%] pointer-events-none select-none"
       >
         <div className="relative w-full h-full">
           <img
@@ -46,7 +46,7 @@ export function Hero() {
             data-testid="img-profile"
           />
           {/* Fade left edge so photo blends into the background */}
-          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/40 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/20 to-transparent" />
           {/* Subtle cyan glow at the base */}
           <div className="absolute bottom-0 right-0 w-3/4 h-1/3 bg-primary/10 blur-[80px] pointer-events-none" />
         </div>
