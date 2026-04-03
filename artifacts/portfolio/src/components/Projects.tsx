@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { FolderGit2, ExternalLink, Github } from "lucide-react";
 import { SiReact, SiPython, SiFastapi, SiPostgresql, SiDocker, SiKubernetes, SiGooglecloud, SiJsonwebtokens, SiCypress, SiStripe, SiRedis, SiTailwindcss, SiDjango } from "react-icons/si";
+import omsDashboard from "@assets/PHOTO-2026-04-03-21-51-04_1775245973100.jpg";
 
 export function Projects() {
   const projects = [
@@ -19,6 +20,7 @@ export function Projects() {
         { icon: SiJsonwebtokens, name: "JWT" },
         { icon: SiCypress, name: "Cypress" }
       ],
+      image: omsDashboard,
       featured: true
     },
     {
@@ -99,18 +101,36 @@ export function Projects() {
               </div>
 
               <div className={`w-full lg:w-1/2 aspect-video rounded-xl overflow-hidden border border-border/50 bg-card relative ${index % 2 === 1 ? 'lg:order-1' : ''}`}>
-                <div className="absolute inset-0 bg-primary/10 mix-blend-overlay group-hover:bg-transparent transition-colors duration-700 z-10" />
-                <div className="absolute inset-0 flex items-center justify-center bg-background/50 backdrop-blur-[2px]">
-                  <span className="font-mono text-primary/50 text-sm border border-primary/20 px-4 py-2 rounded">
-                    [Architecture Visualization]
-                  </span>
-                </div>
-                {/* Decorative code elements */}
-                <div className="absolute top-4 left-4 flex gap-2 z-20">
-                  <div className="w-3 h-3 rounded-full bg-destructive/80" />
-                  <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
-                  <div className="w-3 h-3 rounded-full bg-green-500/80" />
-                </div>
+                {project.image ? (
+                  <>
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-primary/5 mix-blend-overlay group-hover:bg-transparent transition-colors duration-700 z-10" />
+                    {/* Decorative dots */}
+                    <div className="absolute top-4 left-4 flex gap-2 z-20">
+                      <div className="w-3 h-3 rounded-full bg-destructive/80" />
+                      <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
+                      <div className="w-3 h-3 rounded-full bg-green-500/80" />
+                    </div>
+                  </>
+                ) : (
+                  <>
+                    <div className="absolute inset-0 bg-primary/10 mix-blend-overlay group-hover:bg-transparent transition-colors duration-700 z-10" />
+                    <div className="absolute inset-0 flex items-center justify-center bg-background/50 backdrop-blur-[2px]">
+                      <span className="font-mono text-primary/50 text-sm border border-primary/20 px-4 py-2 rounded">
+                        [Architecture Visualization]
+                      </span>
+                    </div>
+                    <div className="absolute top-4 left-4 flex gap-2 z-20">
+                      <div className="w-3 h-3 rounded-full bg-destructive/80" />
+                      <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
+                      <div className="w-3 h-3 rounded-full bg-green-500/80" />
+                    </div>
+                  </>
+                )}
               </div>
             </motion.div>
           ))}
