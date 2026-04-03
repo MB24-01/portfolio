@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { FolderGit2, ExternalLink, Github } from "lucide-react";
-import { SiReact, SiExpress, SiNodedotjs, SiMongodb, SiSocketdotio, SiPython, SiFastapi, SiPostgresql, SiDocker, SiKubernetes, SiGooglecloud, SiJsonwebtokens, SiCypress } from "react-icons/si";
+import { SiReact, SiPython, SiFastapi, SiPostgresql, SiDocker, SiKubernetes, SiGooglecloud, SiJsonwebtokens, SiCypress, SiStripe, SiRedis, SiTailwindcss, SiDjango } from "react-icons/si";
 
 export function Projects() {
   const projects = [
@@ -22,16 +22,19 @@ export function Projects() {
       featured: true
     },
     {
-      title: "VerseLink",
-      tagline: "Linkedin meets SoundCloud — but built by an engineer who understood the problem.",
-      role: "La plateforme de networking pour l'industrie musicale",
-      description: "Une solution architecturée pour combler le manque d'espaces professionnels dédiés aux acteurs de la musique. Intègre un moteur de collaboration temps réel, un système de 'Lyrics Cards' pour la création d'artworks personnalisés, et une curation communautaire basée sur les votes.",
+      title: "ShopFlow",
+      tagline: "E-commerce moderne — de la vitrine au paiement, tout en Python & React.",
+      role: "Plateforme e-commerce full-stack avec gestion complète des commandes",
+      description: "Application e-commerce complète avec catalogue produits dynamique, panier persistant, authentification JWT et paiement intégré via Stripe. Le backend Django REST Framework expose une API robuste consommée par un frontend React responsive. Mise en cache Redis pour les sessions et les requêtes fréquentes, avec un panneau d'administration pour la gestion des stocks et des commandes.",
       tech: [
         { icon: SiReact, name: "React" },
-        { icon: SiExpress, name: "Express" },
-        { icon: SiNodedotjs, name: "Node.js" },
-        { icon: SiMongodb, name: "MongoDB" },
-        { icon: SiSocketdotio, name: "Socket.io" }
+        { icon: SiTailwindcss, name: "Tailwind CSS" },
+        { icon: SiPython, name: "Python" },
+        { icon: SiDjango, name: "Django REST" },
+        { icon: SiPostgresql, name: "PostgreSQL" },
+        { icon: SiRedis, name: "Redis" },
+        { icon: SiStripe, name: "Stripe" },
+        { icon: SiDocker, name: "Docker" }
       ],
       featured: true
     }
