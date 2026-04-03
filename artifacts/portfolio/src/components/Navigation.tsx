@@ -13,6 +13,7 @@ export function Navigation() {
   const navItems = [
     { label: "Expérience", id: "experience" },
     { label: "Projets", id: "projects" },
+    { label: "Perso", id: "personal-projects" },
     { label: "Compétences", id: "skills" },
     { label: "Formation", id: "education" },
   ];
