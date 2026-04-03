@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { FolderGit2, ExternalLink, Github } from "lucide-react";
-import { SiReact, SiPython, SiFastapi, SiPostgresql, SiDocker, SiKubernetes, SiGooglecloud, SiJsonwebtokens, SiCypress, SiStripe, SiRedis, SiTailwindcss, SiDjango } from "react-icons/si";
+import { SiPython, SiFastapi, SiPostgresql, SiDocker, SiKubernetes, SiGooglecloud, SiJsonwebtokens, SiCypress } from "react-icons/si";
 import omsDashboard from "@assets/PHOTO-2026-04-03-21-51-04_1775245973100.jpg";
 
 export function Projects() {
@@ -23,23 +23,6 @@ export function Projects() {
       image: omsDashboard,
       featured: true
     },
-    {
-      title: "ShopFlow",
-      tagline: "E-commerce moderne — de la vitrine au paiement, tout en Python & React.",
-      role: "Plateforme e-commerce full-stack avec gestion complète des commandes",
-      description: "Application e-commerce complète avec catalogue produits dynamique, panier persistant, authentification JWT et paiement intégré via Stripe. Le backend Django REST Framework expose une API robuste consommée par un frontend React responsive. Mise en cache Redis pour les sessions et les requêtes fréquentes, avec un panneau d'administration pour la gestion des stocks et des commandes.",
-      tech: [
-        { icon: SiReact, name: "React" },
-        { icon: SiTailwindcss, name: "Tailwind CSS" },
-        { icon: SiPython, name: "Python" },
-        { icon: SiDjango, name: "Django REST" },
-        { icon: SiPostgresql, name: "PostgreSQL" },
-        { icon: SiRedis, name: "Redis" },
-        { icon: SiStripe, name: "Stripe" },
-        { icon: SiDocker, name: "Docker" }
-      ],
-      featured: true
-    }
   ];
 
   return (
