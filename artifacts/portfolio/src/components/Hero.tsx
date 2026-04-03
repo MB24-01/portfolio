@@ -35,13 +35,13 @@ export function Hero() {
         initial={{ opacity: 0, x: 60 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 1, delay: 0.3 }}
-        className="absolute right-0 top-0 bottom-0 w-[38%] pointer-events-none select-none"
+        className="absolute right-0 top-0 bottom-0 w-[26%] pointer-events-none select-none"
       >
         <div className="relative w-full h-full">
           <img
             src={profilePhoto}
             alt="Mohammed Bennani"
-            className="absolute bottom-0 right-0 h-[92%] w-auto object-cover object-top"
+            className="absolute bottom-0 right-0 h-[78%] w-auto object-cover object-top"
             style={{ objectPosition: "top center" }}
             data-testid="img-profile"
           />
