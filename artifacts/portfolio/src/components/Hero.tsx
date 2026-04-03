@@ -30,33 +30,42 @@ export function Hero() {
     <section id="hero" className="w-full min-h-[100dvh] flex items-center justify-center pt-20 pb-16 relative overflow-hidden">
       <div className="absolute top-1/4 left-1/4 w-[600px] h-[400px] bg-primary/5 blur-[120px] rounded-full pointer-events-none" />
 
-      {/* Photo — pinned to the right edge */}
+      {/* Photo ronde — ancrée à droite, centrée verticalement */}
       <motion.div
-        initial={{ opacity: 0, x: 60 }}
+        initial={{ opacity: 0, x: 40 }}
         animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 1, delay: 0.3 }}
-        className="absolute right-0 top-0 bottom-0 w-[26%] pointer-events-none select-none"
+        transition={{ duration: 0.9, delay: 0.4 }}
+        className="absolute right-16 top-1/2 -translate-y-1/2 flex flex-col items-center gap-4 z-10"
       >
-        <div className="relative w-full h-full">
-          <img
-            src={profilePhoto}
-            alt="Mohammed Bennani"
-            className="absolute bottom-0 right-0 h-[78%] w-auto object-cover object-top"
-            style={{ objectPosition: "top center" }}
-            data-testid="img-profile"
+        <div className="relative">
+          {/* Glow derrière */}
+          <div className="absolute inset-0 rounded-full bg-primary/25 blur-2xl scale-125 pointer-events-none" />
+          {/* Anneau tournant */}
+          <motion.div
+            animate={{ rotate: 360 }}
+            transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
+            className="absolute -inset-3 rounded-full border border-dashed border-primary/40 pointer-events-none"
           />
-          {/* Fade left edge so photo blends into the background */}
-          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/20 to-transparent" />
-          {/* Subtle cyan glow at the base */}
-          <div className="absolute bottom-0 right-0 w-3/4 h-1/3 bg-primary/10 blur-[80px] pointer-events-none" />
+          {/* Anneau fixe */}
+          <div className="absolute -inset-1.5 rounded-full border border-primary/50 pointer-events-none" />
+          {/* Photo */}
+          <div className="w-52 h-52 rounded-full overflow-hidden border-2 border-primary/60 shadow-[0_0_50px_rgba(6,182,212,0.25)]">
+            <img
+              src={profilePhoto}
+              alt="Mohammed Bennani"
+              className="w-full h-full object-cover"
+              style={{ objectPosition: "center top" }}
+              data-testid="img-profile"
+            />
+          </div>
         </div>
 
-        {/* Status badge over the photo */}
+        {/* Badge disponibilité */}
         <motion.div
-          initial={{ opacity: 0, y: 10 }}
+          initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.2, duration: 0.5 }}
-          className="absolute bottom-12 right-10 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-card/90 border border-primary/30 text-xs font-mono text-primary whitespace-nowrap shadow-lg backdrop-blur-sm pointer-events-auto"
+          transition={{ delay: 1.1, duration: 0.5 }}
+          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-card border border-primary/30 text-xs font-mono text-primary whitespace-nowrap shadow-lg"
         >
           <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
           Disponible Sept 2026
