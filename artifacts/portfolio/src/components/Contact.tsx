@@ -46,7 +46,7 @@ export function Contact() {
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
           <a 
-            href="mailto:contact@example.com" 
+            href="mailto:mohammedbennani053@gmail.com" 
             className="flex items-center gap-2 px-8 py-4 rounded-md bg-primary text-primary-foreground font-medium hover:bg-primary/90 transition-colors w-full sm:w-auto justify-center group"
           >
             <Mail className="w-5 h-5" />
@@ -56,7 +56,7 @@ export function Contact() {
           
           <div className="flex items-center gap-4 w-full sm:w-auto justify-center">
             <a 
-              href="#" 
+              href="https://www.linkedin.com/in/mohammed-bennani-1486302ab/" 
               target="_blank" 
               rel="noopener noreferrer"
               className="p-4 rounded-md bg-card border border-border hover:border-primary/50 hover:text-primary transition-colors flex items-center justify-center"
@@ -65,7 +65,7 @@ export function Contact() {
               <Linkedin className="w-5 h-5" />
             </a>
             <a 
-              href="#" 
+              href="https://github.com/MB24-01" 
               target="_blank" 
               rel="noopener noreferrer"
               className="p-4 rounded-md bg-card border border-border hover:border-primary/50 hover:text-primary transition-colors flex items-center justify-center"

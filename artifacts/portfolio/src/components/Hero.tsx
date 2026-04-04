@@ -90,11 +90,11 @@ export function Hero() {
             <span className="text-gradient">Bennani</span>
           </motion.h1>
 
-          <motion.h2 variants={itemVariants} className="text-lg md:text-2xl text-muted-foreground font-display font-medium mb-6 max-w-xl">
+          <motion.h2 variants={itemVariants} className="text-xl md:text-3xl text-muted-foreground font-display font-medium mb-6 max-w-xl">
             Développeur Full-Stack <span className="text-primary/50">|</span> Étudiant Master EPSI Lille
           </motion.h2>
 
-          <motion.p variants={itemVariants} className="text-base text-muted-foreground/80 max-w-lg mb-10 leading-relaxed">
+          <motion.p variants={itemVariants} className="text-lg text-muted-foreground/80 max-w-lg mb-10 leading-relaxed">
             Ingénieur passionné à l'intersection du développement logiciel et de l'infrastructure cloud. Je conçois des systèmes robustes et scalables en alliant rigueur technique et compréhension des enjeux métier.
           </motion.p>
 
