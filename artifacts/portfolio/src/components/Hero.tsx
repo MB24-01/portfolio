@@ -12,23 +12,6 @@ import {
 import profilePhoto from "@assets/WhatsApp_Image_2025-12-01_at_16.04.57_1775245543234.jpeg";
 
 export function Hero() {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.12, delayChildren: 0.2 }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 24 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.7 }
-    }
-  };
-
   const techStack = [
     { icon: SiOpenjdk, name: "Java" },
     { icon: SiPython, name: "Python" },
@@ -41,132 +24,97 @@ export function Hero() {
   return (
     <section
       id="hero"
-      className="w-full min-h-[100dvh] flex flex-col lg:flex-row items-center justify-center pt-24 pb-16 relative overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden px-6 pt-28 pb-16"
     >
-      <div className="absolute top-1/4 left-1/4 w-[600px] h-[400px] bg-primary/5 blur-[120px] rounded-full pointer-events-none" />
+      {/* Glow */}
+      <div className="absolute top-1/4 left-1/4 w-[500px] h-[300px] bg-cyan-500/10 blur-[120px] rounded-full" />
 
-      {/* PHOTO */}
-      <motion.div
-        initial={{ opacity: 0, x: 40 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.9, delay: 0.4 }}
-        className="relative order-first mb-8 flex flex-col items-center gap-4 z-10 lg:absolute lg:right-16 lg:top-1/2 lg:-translate-y-1/2 lg:mb-0"
-      >
-        <div className="relative">
-          {/* Glow */}
-          <div className="absolute inset-0 rounded-full bg-primary/25 blur-2xl scale-125 pointer-events-none" />
+      <div className="max-w-7xl mx-auto w-full grid lg:grid-cols-2 gap-16 items-center">
 
-          {/* Animated ring */}
-          <motion.div
-            animate={{ rotate: 360 }}
-            transition={{
-              duration: 18,
-              repeat: Infinity,
-              ease: "linear"
-            }}
-            className="absolute -inset-3 rounded-full border border-dashed border-primary/40 pointer-events-none"
-          />
+        {/* LEFT CONTENT */}
+        <div className="z-10 order-2 lg:order-1 text-center lg:text-left">
 
-          {/* Static ring */}
-          <div className="absolute -inset-1.5 rounded-full border border-primary/50 pointer-events-none" />
-
-          {/* Image */}
-          <div className="w-44 h-44 sm:w-56 sm:h-56 lg:w-80 lg:h-80 rounded-full overflow-hidden border-2 border-primary/60 shadow-[0_0_50px_rgba(6,182,212,0.25)]">
-            <img
-              src={profilePhoto}
-              alt="Mohammed Bennani"
-              className="w-full h-full object-cover"
-              style={{ objectPosition: "center top" }}
-              data-testid="img-profile"
-            />
-          </div>
-        </div>
-
-        {/* Availability badge */}
-        <motion.div
-          initial={{ opacity: 0, y: 8 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.1, duration: 0.5 }}
-          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-card border border-primary/30 text-xs font-mono text-primary whitespace-nowrap shadow-lg"
-        >
-          <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
-          Disponible Sept 2026
-        </motion.div>
-      </motion.div>
-
-      {/* TEXT */}
-      <div className="container mx-auto px-6 max-w-6xl relative z-10">
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-          className="flex flex-col items-start max-w-xl lg:max-w-2xl"
-        >
-          <motion.div
-            variants={itemVariants}
-            className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary font-mono text-xs mb-8"
-          >
-            <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-cyan-500/30 bg-cyan-500/10 text-cyan-400 text-sm mb-8">
+            <span className="w-2 h-2 bg-cyan-400 rounded-full animate-pulse" />
             Recherche d'alternance DevOps/Cloud — Sept 2026
-          </motion.div>
+          </div>
 
-          <motion.h1
-            variants={itemVariants}
-            className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold leading-[1.1] mb-6"
-          >
+          <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-6">
             Mohammed <br />
-            <span className="text-gradient">Bennani</span>
-          </motion.h1>
+            <span className="text-white">Bennani</span>
+          </h1>
 
-          <motion.h2
-            variants={itemVariants}
-            className="text-lg sm:text-xl md:text-3xl text-muted-foreground font-display font-medium mb-6 max-w-xl"
-          >
-            Développeur Full-Stack{" "}
-            <span className="text-primary/50">|</span> Étudiant Master EPSI Lille
-          </motion.h2>
+          <h2 className="text-xl md:text-3xl text-gray-300 mb-6">
+            Développeur Full-Stack | Étudiant Master EPSI Lille
+          </h2>
 
-          <motion.p
-            variants={itemVariants}
-            className="text-base sm:text-lg text-muted-foreground/80 max-w-lg mb-10 leading-relaxed"
-          >
-            Ingénieur passionné à l'intersection du développement logiciel et de
-            l'infrastructure cloud. Je conçois des systèmes robustes et
-            scalables en alliant rigueur technique et compréhension des enjeux
-            métier.
-          </motion.p>
+          <p className="text-gray-400 text-lg leading-relaxed max-w-xl mx-auto lg:mx-0 mb-10">
+            Ingénieur passionné à l'intersection du développement logiciel et de l'infrastructure cloud.
+            Je conçois des systèmes robustes et scalables en alliant rigueur technique
+            et compréhension des enjeux métier.
+          </p>
 
-          <motion.div
-            variants={itemVariants}
-            className="flex flex-wrap gap-3"
-          >
+          {/* STACK */}
+          <div className="flex flex-wrap justify-center lg:justify-start gap-3">
             {techStack.map((tech, i) => (
               <div
                 key={i}
-                className="flex items-center gap-2 px-3 py-1.5 rounded-md bg-card border border-border hover:border-primary/30 hover:bg-card/80 transition-all duration-300"
+                className="flex items-center gap-2 px-4 py-2 rounded-lg border border-cyan-500/20 bg-black/30 backdrop-blur-sm"
               >
-                <tech.icon className="w-3.5 h-3.5 text-primary" />
-                <span className="font-mono text-xs text-foreground/80">
-                  {tech.name}
-                </span>
+                <tech.icon className="text-cyan-400" />
+                <span className="text-sm">{tech.name}</span>
               </div>
             ))}
+          </div>
+        </div>
+
+        {/* PHOTO */}
+        <div className="relative flex justify-center order-1 lg:order-2">
+
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8 }}
+            className="relative"
+          >
+            {/* Glow */}
+            <div className="absolute inset-0 bg-cyan-500/20 blur-3xl rounded-full scale-110" />
+
+            {/* Ring */}
+            <motion.div
+              animate={{ rotate: 360 }}
+              transition={{
+                duration: 20,
+                repeat: Infinity,
+                ease: "linear"
+              }}
+              className="absolute -inset-4 border border-dashed border-cyan-400/40 rounded-full"
+            />
+
+            {/* Image */}
+            <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-2 border-cyan-400/50 shadow-[0_0_60px_rgba(34,211,238,0.35)]">
+              <img
+                src={profilePhoto}
+                alt="Mohammed Bennani"
+                className="w-full h-full object-cover"
+              />
+            </div>
+
+            {/* Badge */}
+            <div className="mt-6 flex justify-center">
+              <div className="px-4 py-2 rounded-full border border-cyan-500/30 bg-black/40 text-cyan-400 text-sm">
+                ● Disponible Sept 2026
+              </div>
+            </div>
           </motion.div>
-        </motion.div>
+        </div>
       </div>
 
       {/* SCROLL */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.8, duration: 1 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-muted-foreground z-10"
-      >
-        <span className="font-mono text-xs uppercase tracking-widest">
-          Scroll
-        </span>
-        <ArrowDown className="w-4 h-4 animate-bounce" />
-      </motion.div>
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center text-gray-400">
+        <span className="text-xs tracking-[0.3em] mb-2">SCROLL</span>
+        <ArrowDown className="animate-bounce w-4 h-4" />
+      </div>
     </section>
   );
 }
