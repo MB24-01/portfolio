@@ -1,6 +1,14 @@
 import { motion } from "framer-motion";
 import { ArrowDown } from "lucide-react";
-import { SiPython, SiReact, SiDocker, SiKubernetes, SiTypescript, SiOpenjdk } from "react-icons/si";
+import {
+  SiPython,
+  SiReact,
+  SiDocker,
+  SiKubernetes,
+  SiTypescript,
+  SiOpenjdk
+} from "react-icons/si";
+
 import profilePhoto from "@assets/WhatsApp_Image_2025-12-01_at_16.04.57_1775245543234.jpeg";
 
 export function Hero() {
@@ -14,7 +22,11 @@ export function Hero() {
 
   const itemVariants = {
     hidden: { opacity: 0, y: 24 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.7 } }
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.7 }
+    }
   };
 
   const techStack = [
@@ -27,29 +39,39 @@ export function Hero() {
   ];
 
   return (
-    <section id="hero" className="w-full min-h-[100dvh] flex items-center justify-center pt-20 pb-16 relative overflow-hidden">
+    <section
+      id="hero"
+      className="w-full min-h-[100dvh] flex flex-col lg:flex-row items-center justify-center pt-24 pb-16 relative overflow-hidden"
+    >
       <div className="absolute top-1/4 left-1/4 w-[600px] h-[400px] bg-primary/5 blur-[120px] rounded-full pointer-events-none" />
 
-      {/* Photo ronde — ancrée à droite, centrée verticalement */}
+      {/* PHOTO */}
       <motion.div
         initial={{ opacity: 0, x: 40 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.9, delay: 0.4 }}
-        className="absolute right-16 top-1/2 -translate-y-1/2 flex flex-col items-center gap-4 z-10"
+        className="relative order-first mb-8 flex flex-col items-center gap-4 z-10 lg:absolute lg:right-16 lg:top-1/2 lg:-translate-y-1/2 lg:mb-0"
       >
         <div className="relative">
-          {/* Glow derrière */}
+          {/* Glow */}
           <div className="absolute inset-0 rounded-full bg-primary/25 blur-2xl scale-125 pointer-events-none" />
-          {/* Anneau tournant */}
+
+          {/* Animated ring */}
           <motion.div
             animate={{ rotate: 360 }}
-            transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
+            transition={{
+              duration: 18,
+              repeat: Infinity,
+              ease: "linear"
+            }}
             className="absolute -inset-3 rounded-full border border-dashed border-primary/40 pointer-events-none"
           />
-          {/* Anneau fixe */}
+
+          {/* Static ring */}
           <div className="absolute -inset-1.5 rounded-full border border-primary/50 pointer-events-none" />
-          {/* Photo */}
-          <div className="w-80 h-80 rounded-full overflow-hidden border-2 border-primary/60 shadow-[0_0_50px_rgba(6,182,212,0.25)]">
+
+          {/* Image */}
+          <div className="w-44 h-44 sm:w-56 sm:h-56 lg:w-80 lg:h-80 rounded-full overflow-hidden border-2 border-primary/60 shadow-[0_0_50px_rgba(6,182,212,0.25)]">
             <img
               src={profilePhoto}
               alt="Mohammed Bennani"
@@ -60,7 +82,7 @@ export function Hero() {
           </div>
         </div>
 
-        {/* Badge disponibilité */}
+        {/* Availability badge */}
         <motion.div
           initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
@@ -72,7 +94,7 @@ export function Hero() {
         </motion.div>
       </motion.div>
 
-      {/* Text content — left side */}
+      {/* TEXT */}
       <div className="container mx-auto px-6 max-w-6xl relative z-10">
         <motion.div
           variants={containerVariants}
@@ -80,45 +102,69 @@ export function Hero() {
           animate="visible"
           className="flex flex-col items-start max-w-xl lg:max-w-2xl"
         >
-          <motion.div variants={itemVariants} className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary font-mono text-xs mb-8">
+          <motion.div
+            variants={itemVariants}
+            className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary font-mono text-xs mb-8"
+          >
             <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
             Recherche d'alternance DevOps/Cloud — Sept 2026
           </motion.div>
 
-          <motion.h1 variants={itemVariants} className="text-5xl md:text-7xl lg:text-8xl font-bold leading-[1.1] mb-6">
+          <motion.h1
+            variants={itemVariants}
+            className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold leading-[1.1] mb-6"
+          >
             Mohammed <br />
             <span className="text-gradient">Bennani</span>
           </motion.h1>
 
-          <motion.h2 variants={itemVariants} className="text-xl md:text-3xl text-muted-foreground font-display font-medium mb-6 max-w-xl">
-            Développeur Full-Stack <span className="text-primary/50">|</span> Étudiant Master EPSI Lille
+          <motion.h2
+            variants={itemVariants}
+            className="text-lg sm:text-xl md:text-3xl text-muted-foreground font-display font-medium mb-6 max-w-xl"
+          >
+            Développeur Full-Stack{" "}
+            <span className="text-primary/50">|</span> Étudiant Master EPSI Lille
           </motion.h2>
 
-          <motion.p variants={itemVariants} className="text-lg text-muted-foreground/80 max-w-lg mb-10 leading-relaxed">
-            Ingénieur passionné à l'intersection du développement logiciel et de l'infrastructure cloud. Je conçois des systèmes robustes et scalables en alliant rigueur technique et compréhension des enjeux métier.
+          <motion.p
+            variants={itemVariants}
+            className="text-base sm:text-lg text-muted-foreground/80 max-w-lg mb-10 leading-relaxed"
+          >
+            Ingénieur passionné à l'intersection du développement logiciel et de
+            l'infrastructure cloud. Je conçois des systèmes robustes et
+            scalables en alliant rigueur technique et compréhension des enjeux
+            métier.
           </motion.p>
 
-          <motion.div variants={itemVariants} className="flex flex-wrap gap-3">
+          <motion.div
+            variants={itemVariants}
+            className="flex flex-wrap gap-3"
+          >
             {techStack.map((tech, i) => (
               <div
                 key={i}
                 className="flex items-center gap-2 px-3 py-1.5 rounded-md bg-card border border-border hover:border-primary/30 hover:bg-card/80 transition-all duration-300"
               >
                 <tech.icon className="w-3.5 h-3.5 text-primary" />
-                <span className="font-mono text-xs text-foreground/80">{tech.name}</span>
+                <span className="font-mono text-xs text-foreground/80">
+                  {tech.name}
+                </span>
               </div>
             ))}
           </motion.div>
         </motion.div>
       </div>
 
+      {/* SCROLL */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.8, duration: 1 }}
         className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-muted-foreground z-10"
       >
-        <span className="font-mono text-xs uppercase tracking-widest">Scroll</span>
+        <span className="font-mono text-xs uppercase tracking-widest">
+          Scroll
+        </span>
         <ArrowDown className="w-4 h-4 animate-bounce" />
       </motion.div>
     </section>
